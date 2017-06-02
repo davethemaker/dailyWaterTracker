@@ -16,5 +16,11 @@ function upload(response,postData){
     response.end();
 }
 
+function show(response){
+    response.writeHead(200,{'Content-Type':"image/png"});
+    fs.createReadStream("/tmp/water.png").pipe(response);
+}
+
 exports.start = start;
 exports.upload = upload;
+exports.show = show;
