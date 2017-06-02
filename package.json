@@ -1,0 +1,28 @@
+{
+  "name": "dailywatertracker",
+  "version": "1.0.0",
+  "description": "app to track water intake low-level node + modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davethemaker/dailyWaterTracker.git"
+  },
+  "keywords": [
+    "node",
+    "http",
+    "formidable"
+  ],
+  "author": "David Eliason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davethemaker/dailyWaterTracker/issues"
+  },
+  "homepage": "https://github.com/davethemaker/dailyWaterTracker#readme",
+  "dependencies": {
+    "formidable": "^1.1.1",
+    "nodemon": "^1.11.0"
+  }
+}
