@@ -5,7 +5,7 @@ var url  = require('url');
 function start(route, handle) {
     function onRequest(request,response) {
         var pathname = url.parse(request.url).pathname;
-        route(handle,pathname); // invoke passed-in route method
+        route(handle,pathname,response); // invoke passed-in route method
         console.log("rec'd: " + pathname);
         response.writeHead(200,{'Content-Type':'text/plain'});
         response.write("hello world");
