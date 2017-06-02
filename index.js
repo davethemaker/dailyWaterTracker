@@ -1,3 +1,3 @@
-var server = require('./server.js').serverWrapper; // function in exported module
+var server = require('./server.js').start; // function in exported module
 
 server(); // instantiate server

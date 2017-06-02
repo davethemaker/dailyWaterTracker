@@ -1,7 +1,7 @@
 var http = require('http');
 var fs   = require('fs');
 
-function serverWrapper() {
+function start() {
     function requesListener(request,response) {
         response.writeHead(200,{'Content-Type':'text/plain'});
         response.write("hello world");
@@ -12,4 +12,4 @@ function serverWrapper() {
     console.log("server up at 8080");
 }
 
-exports.serverWrapper = serverWrapper;
+exports.start = start;
