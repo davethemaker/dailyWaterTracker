@@ -7,9 +7,9 @@ function start(route, handle) {
         var pathname = url.parse(request.url).pathname;
         route(handle,pathname,response); // invoke passed-in route method
         console.log("rec'd: " + pathname);
-        response.writeHead(200,{'Content-Type':'text/plain'});
-        response.write("hello world");
-        response.end();
+        // response.writeHead(200,{'Content-Type':'text/plain'});
+        // response.write("hello world");
+        // response.end();
     }
 
     http.createServer(onRequest).listen(8080);
