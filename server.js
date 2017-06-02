@@ -12,7 +12,7 @@ function start(route, handle) {
         request.setEncoding('utf8');
         request.addListener("data", function(postDataChunk){
            postData += postDataChunk;
-           console.log("rec'd POSTed data chunk " + postDataChunk + ".");
+           // console.log("rec'd POSTed data chunk " + postDataChunk + ".");
         });
 
         request.addListener("end",function () {
