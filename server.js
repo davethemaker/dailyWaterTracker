@@ -4,9 +4,23 @@ var url  = require('url');
 
 function start(route, handle) {
     function onRequest(request,response) {
+
+        var postData = "";
         var pathname = url.parse(request.url).pathname;
-        route(handle,pathname,response); // invoke passed-in route method
         console.log("rec'd: " + pathname);
+
+        request.setEncoding('utf8');
+        request.addListener("data", function(postDataChunk){
+           postData += postDataChunk;
+           console.log("rec'd POSTed data chunk " + postDataChunk + ".");
+        });
+
+        request.addListener("end",function () {
+            route(handle,pathname,response,postData);
+        });
+
+        // route(handle,pathname,response); // invoke passed-in route method
+
         // response.writeHead(200,{'Content-Type':'text/plain'});
         // response.write("hello world");
         // response.end();
