@@ -16,6 +16,8 @@ function upload(response,request){
 
     var form = new formidable.IncomingForm(); // from documentation
 
+    form.uploadDir = "./savedImages";
+
     console.log("about to parse");
 
     form.parse(request, function(err,fields,files){ // from documentation
