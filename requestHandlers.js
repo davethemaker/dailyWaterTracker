@@ -1,5 +1,11 @@
+var fs = require('fs');
+
 function start(response) {
     console.log("request handler for 'start' has been called");
+    fs.readFile('./uploadForm.html',function(err,data){
+       response.write(data);
+       response.end();
+    });
 }
 
 function upload(response){
