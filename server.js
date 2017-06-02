@@ -5,19 +5,19 @@ var url  = require('url');
 function start(route, handle) {
     function onRequest(request,response) {
 
-        var postData = "";
+        // var postData = "";
         var pathname = url.parse(request.url).pathname;
         console.log("rec'd: " + pathname);
 
-        request.setEncoding('utf8');
-        request.addListener("data", function(postDataChunk){
-           postData += postDataChunk;
+        // request.setEncoding('utf8');
+        // request.addListener("data", function(postDataChunk){
+        //    postData += postDataChunk;
            // console.log("rec'd POSTed data chunk " + postDataChunk + ".");
-        });
+        // });
 
-        request.addListener("end",function () {
+        // request.addListener("end",function () {
             route(handle,pathname,response,postData);
-        });
+        // });
 
         // route(handle,pathname,response); // invoke passed-in route method
 

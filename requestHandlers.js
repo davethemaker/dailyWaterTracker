@@ -17,6 +17,7 @@ function upload(response,postData){
 }
 
 function show(response){
+    console.log("reuest handler show was called");
     response.writeHead(200,{'Content-Type':"image/png"});
     fs.createReadStream("/tmp/water.png").pipe(response);
 }
