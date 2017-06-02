@@ -1,6 +1,5 @@
 var fs = require('fs');
 var querystring = require('querystring');
-var formidable = require('formidable');
 
 function start(response) {
     console.log("request handler for 'start' has been called");
@@ -13,14 +12,15 @@ function start(response) {
 function upload(response,request){
     console.log("request handler for 'upload' has been called");
 
-    var form = new formidable.IncomingForm();
+    // var form = new formidable.IncomingForm();
     console.log("about to parse");
-    form.parse(request, function(err,fields,files){
-        console.log("parsing done");
-    });
+    // form.parse(request, function(err,fields,files){
+    //     console.log("parsing done");
+    // });
     response.writeHead(200,{'Content-Type':'text/html'});
     // response.write("you sent: " + querystring.parse(postData).text);
-    response.write("<img src='/show' />");
+    // response.write("<img src='/show' />");
+    response.write("<h3>show image here</h3>")
     response.end();
 }
 
