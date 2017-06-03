@@ -6,6 +6,7 @@ var util = require('util');
 function start(response) {
     console.log("request handler for 'start' has been called");
     fs.readFile('./uploadForm.html',function(err,data){
+       response.writeHead(200,{'Content-Type':'text/html'});
        response.write(data);
        response.end();
     });
@@ -26,8 +27,8 @@ function upload(response,request){
 
         fs.readdir('./savedImages',(err,imageFiles) => {
 
-            fs.rename(files.upload.path,"savedImages/photo" + imageFiles.length + ".png", function(error){
-                if(error) console.log("error with renaming");
+            fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
+                if(err) console.log("error with renaming");
                 console.log("logged out number");
             });
         });
