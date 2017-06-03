@@ -47,15 +47,27 @@ function upload(response,request){
    return;
 }
 
-function show(response){
+function show(response) {
     console.log("request handler show was called");
-    response.writeHead(200,{'Content-Type':"image/png"});
+    response.writeHead(200, {'Content-Type': "image/png"});
+
     // fs.createReadStream("./savedImages/").pipe(response);
 
-    fs.readdir('./savedImages',(err,imageFiles) => {
-        fs.createReadStream("./savedImages/" +imageFiles.length + ".png").pipe(response);
-    });
-};
+    fs.readdir('./savedImages', (err, imageFiles) => {
+        fs.createReadStream("./savedImages/" + imageFiles.length + ".png").pipe(response);
+})
+    ;
+}
+
+
+    // fs.readFile('./showImages.html',function(err,data){
+    //     response.writeHead(200,{'Content-Type':'text/html'});
+    //     response.write(data);
+    //     response.end();
+    // });
+
+
+
 
 
 

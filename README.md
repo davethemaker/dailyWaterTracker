@@ -6,6 +6,7 @@ Description:
   * low-level server using node
   * use of formidable to parse incoming form posted data
   * low-level eventListeners, routing, url parsing
+  * Not very flashy, this is more for low-level understanding for working with node modules, routing, fs access
 
     The app uses dependency injection in numberous locations. A 'handle' object is creataed
     where desired pathnames are cojoined with requestHandlers - functions that will be invoked.
@@ -17,3 +18,7 @@ Description:
 
 To Use:
   * clone repo
+  * cd into repo
+  * CLI: $ npm install
+  * CLI: $ node index.js
+  * Browser: localhost:8080
