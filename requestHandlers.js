@@ -53,7 +53,7 @@ function show(response){
     // fs.createReadStream("./savedImages/").pipe(response);
 
     fs.readdir('./savedImages',(err,imageFiles) => {
-        fs.createReadStream("./savedImages/photo"+imageFiles.length + ".png").pipe(response);
+        fs.createReadStream("./savedImages/" +imageFiles.length + ".png").pipe(response);
     });
 };
 
