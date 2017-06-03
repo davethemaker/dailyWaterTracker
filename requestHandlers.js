@@ -36,13 +36,13 @@ function upload(response,request){
 
 
 
-        response.writeHead(200,{'Content-Type':'text/plain'});
-        // response.write("you sent: " + querystring.parse(postData).text);
-        response.write("upload received");
-        response.write("upload path" + files.upload.path);
-        // response.write("<h3>show image here</h3>")
-        response.end(util.inspect({fields:fields, files:files}));
-        response.end();
+        response.writeHead(200,{'Content-Type':'text/html'});
+        // // response.write("you sent: " + querystring.parse(postData).text);
+        response.write("<p>upload received</p></p>");
+        // // response.write("upload path" + files.upload.path);
+        // // response.write("<h3>show image here</h3>")
+        // // response.end(util.inspect({fields:fields, files:files}));
+        response.end('<h3><a href="/">back</a><h3>');
     });
    return;
 }
