@@ -17,6 +17,9 @@ function upload(response,request){
     var form = new formidable.IncomingForm(); // from documentation
 
     form.uploadDir = "./savedImages";
+    fs.rename('./savedImages/upload_069b2c3e3aa1c29a4f6309f53d85348a','./savedImages/me.jpg',function(err){
+        if(err) console.log("error!");
+    });
 
     console.log("about to parse");
 
@@ -35,7 +38,7 @@ function upload(response,request){
 function show(response){
     console.log("reuest handler show was called");
     response.writeHead(200,{'Content-Type':"image/png"});
-    fs.createReadStream("/tmp/water.png").pipe(response);
+    fs.createReadStream("./savedImages/me.jpg").pipe(response);
 }
 
 exports.start = start;
