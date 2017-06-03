@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <style>body{background-color: lightblue}</style>
+  <style>body {background-color: lightblue}
+         #picsLink {position: absolute;
+                    left: 50%;
+                    bottom: 90px;}
+  </style>
 </head>
 <body>
   <div class="container">
@@ -12,6 +16,11 @@
           <input type="file" name="upload" multiple="multiple">
           <input type="submit" value="Upload" />
       </form>
+
+      <div id="picsLink">
+          <a href="/show">See pics and logs</a>
+      </div>
+
   </div>
 </body>
 </html>
