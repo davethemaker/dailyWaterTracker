@@ -14,3 +14,6 @@ npm_debug.log*
 
 **/.idea/workspace.xml
 **/.idea/tasks.xml
+
+# ignore photo imgs
+savedImages/*
