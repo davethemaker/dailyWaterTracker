@@ -49,8 +49,14 @@ function upload(response,request){
 function show(response){
     console.log("request handler show was called");
     response.writeHead(200,{'Content-Type':"image/png"});
-    fs.createReadStream("./savedImages/me.jpg").pipe(response);
-}
+    // fs.createReadStream("./savedImages/").pipe(response);
+
+    fs.readdir('./savedImages',(err,imageFiles) => {
+        fs.createReadStream("./savedImages/photo"+imageFiles.length + ".png").pipe(response);
+    });
+};
+
+
 
 exports.start = start;
 exports.upload = upload;
