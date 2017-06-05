@@ -7,9 +7,10 @@ require('dotenv').config()
 
 
 function start(route, handle) {
-   MongoClient.connect(process.env.PROD_MONGODB, (err,db) => {
-     if(err) return console.log(err)
-     db = database;
+   // MongoClient.connect(process.env.PROD_MONGODB, (err,db) => {
+   //   if(err) return console.log(err)
+   //   console.log("db connected");
+   //   db = database;
      
     function onRequest(request,response) {
 
@@ -25,7 +26,7 @@ function start(route, handle) {
         // });
 
         // request.addListener("end",function () {
-            route(handle,pathname,response,request,db);
+            route(handle,pathname,response,request);
         // });
 
         // route(handle,pathname,response); // invoke passed-in route method
@@ -38,7 +39,7 @@ function start(route, handle) {
     http.createServer(onRequest).listen(process.env.PORT || 8080);
     console.log("server up at 8080");
 
-  });  
+  // });  
 }
 
 exports.start = start;
