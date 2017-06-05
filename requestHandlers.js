@@ -55,8 +55,16 @@ function upload(response,request,database){
     return;
 }
 
-function showDescriptions(response,database) {
+function showDescriptions(response,request,database) {
     console.log("showDescriptions request handler has been called");
+
+    database.collection('dailywatertracker').find().toArray(function(err,descriptions){
+        if(err) return console.log(err)
+        response.writeHead(200,{'Content-Type':'text/html'});
+        response.write('<h3>Water descriptions:</h3>');
+        response.end('<h5><a href="/">Add something more?</a></h5>');
+    });
+  return;
 }
 
 function showImage(response) {
