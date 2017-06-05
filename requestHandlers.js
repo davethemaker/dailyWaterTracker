@@ -60,6 +60,9 @@ function showDescriptions(response,request,database) {
 
     database.collection('dailywatertracker').find().toArray(function(err,descriptions){
         if(err) return console.log(err)
+        for(var i = 0; i < descriptions.length; i++){
+            console.log(descriptions[i].description);
+        }
         console.log("descriptions from db:" + descriptions);
         response.writeHead(200,{'Content-Type':'text/html'});
         response.write('<h3>Water descriptions:</h3>');
