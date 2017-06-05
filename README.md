@@ -15,6 +15,7 @@ Description:
     in different locations in subsequent use.
     In a similar way, both the 'route' module, the mongoDB db connection, are injected , which then provides the machinery
     to use the handle object and connection using the pathname obtained from the url.
+    Please note that for image-saving to be functional, those related functions will need to be uncommented in requestHandlers
 
 To Use:
   * clone repo
@@ -22,5 +23,7 @@ To Use:
   * CLI: $ npm install
   * CLI: $ node index.js
   * Browser: localhost:8080
+
+
 
 Or, visit the live site: [daily water tracker](https://dailywatertracker.herokuapp.com/)
