@@ -21,9 +21,9 @@ function upload(response,request,database){
 
     console.log("about to parse");
 
-    form.parse(request, function(err,fields,files){ // from documentation
+    form.parse(request, function(err,fields){ // from documentation
         console.log("parsing done");
-        console.log(util.inspect({fields,fields, files:files}));
+        console.log(util.inspect({fields,fields}));
         // console.log("files" + files);
 
         database.collection('dailywatertracker').save({description: fields.description}, (err,result) => {
@@ -33,13 +33,13 @@ function upload(response,request,database){
         });
         
 
-        fs.readdir('./savedImages',(err,imageFiles) => {
+        // fs.readdir('./savedImages',(err,imageFiles) => {
 
-            fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
-                if(err) console.log("error with renaming");
-                console.log("uploaded file name was renamed");
-            });
-        });
+        //     fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
+        //         if(err) console.log("error with renaming");
+        //         console.log("uploaded file name was renamed");
+        //     });
+        // });
 
 
 
