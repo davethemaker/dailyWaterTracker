@@ -50,7 +50,7 @@ function upload(response,request,database){
         // // response.write("upload path" + files.upload.path);
         // // response.write("<h3>show image here</h3>")
         // // response.end(util.inspect({fields:fields, files:files}));
-        response.end('<h3><a href="/">back</a><h3>');
+        response.end('<ul><li><a href="/">add another?</a></li><li><a href="/showDescriptions">see descriptions</a></li></ul>');
         });
     return;
 }
@@ -60,12 +60,15 @@ function showDescriptions(response,request,database) {
 
     database.collection('dailywatertracker').find().toArray(function(err,descriptions){
         if(err) return console.log(err)
-        for(var i = 0; i < descriptions.length; i++){
-            console.log(descriptions[i].description);
-        }
+        
         console.log("descriptions from db:" + descriptions);
         response.writeHead(200,{'Content-Type':'text/html'});
         response.write('<h3>Water descriptions:</h3>');
+        for(var i = 0; i < descriptions.length; i++){
+
+           response.write('<ul><li>'+ descriptions[i].description +'</li></ul>');
+            // console.log(descriptions[i].description);
+        }
         response.end('<h5><a href="/">Add something more?</a></h5>');
     });
   return;
