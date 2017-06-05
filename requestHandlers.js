@@ -23,18 +23,29 @@ function upload(response,request,database){
 
     form.parse(request, function(err,fields,files){ // from documentation
         console.log("parsing done");
-        console.log("fields:" + fields);
         console.log(util.inspect({fields,fields, files:files}));
         // console.log("files" + files);
+        database.collection('dailywatertracker').save(files.upload.path, (err,result) => {
+                    if(err) return console.log(err)
+                    console.log(result + " saved to db successfully");
+                    res.redirect('/');
+        });
         
 
-        fs.readdir('./savedImages',(err,imageFiles) => {
+        // fs.readdir('./savedImages',(err,imageFiles) => {
 
-            fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
-                if(err) console.log("error with renaming");
-                console.log("uploaded file name was renamed");
-            });
-        });
+        //     fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
+        //         if(err) console.log("error with renaming");
+        //         console.log("uploaded file name was renamed");
+        //     });
+
+        //     // good place to invoke db since we have renamed file on hand
+        //     // database.collection('dailywatertracker').save(,(err,result) => {
+        //     //         if(err) return console.log(err)
+        //     //         console.log(data + " saved to db successfully");
+        //     //         res.redirect('/');
+        //     // });
+        // });
 
 
 
