@@ -12,7 +12,7 @@ function start(response) {
     });
 }
 
-function upload(response,request){
+function upload(response,request,database){
     console.log("request handler for 'upload' has been called");
 
     var form = new formidable.IncomingForm(); // from documentation
@@ -23,13 +23,16 @@ function upload(response,request){
 
     form.parse(request, function(err,fields,files){ // from documentation
         console.log("parsing done");
-
+        console.log("fields:" + fields);
+        console.log(util.inspect({fields,fields, files:files}));
+        // console.log("files" + files);
+        
 
         fs.readdir('./savedImages',(err,imageFiles) => {
 
             fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
                 if(err) console.log("error with renaming");
-                console.log("logged out number");
+                console.log("uploaded file name was renamed");
             });
         });
 

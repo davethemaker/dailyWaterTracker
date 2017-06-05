@@ -10,7 +10,6 @@ function start(route, handle) {
    MongoClient.connect(process.env.PROD_MONGODB, (err,database) => {
      if(err) return console.log(err)
      console.log("db connected");
-     db = database;
      
     function onRequest(request,response) {
 
