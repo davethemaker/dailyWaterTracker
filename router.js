@@ -1,8 +1,8 @@
 
-function route(handle, pathname,response,request){
+function route(handle, pathname,response,request,database){
     console.log("here is the pathname, going to route to it: " + pathname);
     if(typeof handle[pathname] === 'function'){
-        handle[pathname](response,request); // invoke the function
+        handle[pathname](response,request,database); // invoke the function
     }
     else{
         console.log("no request handler found for " + pathname);
