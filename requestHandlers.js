@@ -93,4 +93,4 @@ function showDescriptions(response,request,database) {
 exports.start = start;
 exports.upload = upload;
 exports.showDescriptions = showDescriptions;
-exports.showImage = showImage;
+// exports.showImage = showImage;
