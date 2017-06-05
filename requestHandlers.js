@@ -26,11 +26,11 @@ function upload(response,request,database){
         console.log(util.inspect({fields,fields, files:files}));
         // console.log("files" + files);
 
-        // database.collection('dailywatertracker').save(files.upload.path, (err,result) => {
-        //             if(err) return console.log(err)
-        //             console.log(result + " saved to db successfully");
-        //             res.redirect('/');
-        // });
+        database.collection('dailywatertracker').save({description: fields.description}, (err,result) => {
+                    if(err) return console.log(err)
+                    console.log(result + " saved to db successfully");
+                    // request.get('/');  // redirect non-funcitonal
+        });
         
 
         fs.readdir('./savedImages',(err,imageFiles) => {
