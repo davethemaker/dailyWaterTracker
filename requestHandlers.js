@@ -55,6 +55,10 @@ function upload(response,request,database){
     return;
 }
 
+function showDescriptions(response,database) {
+    console.log("showDescriptions request handler has been called");
+}
+
 function showImage(response) {
     console.log("request handler show was called");
     response.writeHead(200, {'Content-Type': "image/png"});
@@ -73,4 +77,5 @@ function showImage(response) {
 
 exports.start = start;
 exports.upload = upload;
+exports.showDescriptions = showDescriptions;
 exports.showImage = showImage;
