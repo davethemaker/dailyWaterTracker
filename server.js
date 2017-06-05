@@ -1,6 +1,10 @@
 const http = require('http');
 const fs   = require('fs');
 const url  = require('url');
+const MongoClient = require("mongodb").MongoClient;
+
+require('dotenv').config()
+
 
 function start(route, handle) {
     function onRequest(request,response) {
@@ -26,7 +30,7 @@ function start(route, handle) {
         // response.end();
     }
 
-    http.createServer(onRequest).listen(8080);
+    http.createServer(onRequest).listen(process.env.PORT || 8080);
     console.log("server up at 8080");
 }
 
