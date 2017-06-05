@@ -1,8 +1,8 @@
-var server = require('./server.js').start; // function in exported module
-var router = require('./router.js'); // pass this to start function
-var requestHandlers = require('./requestHandlers.js');
+const server = require('./server.js').start; // function in exported module
+const router = require('./router.js'); // pass this to start function
+const requestHandlers = require('./requestHandlers.js');
 
-var handle = {}; // key:value pairs to handle routing
+const handle = {}; // key:value pairs to handle routing
 handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;

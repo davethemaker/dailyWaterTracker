@@ -1,12 +1,12 @@
-var http = require('http');
-var fs   = require('fs');
-var url  = require('url');
+const http = require('http');
+const fs   = require('fs');
+const url  = require('url');
 
 function start(route, handle) {
     function onRequest(request,response) {
 
-        // var postData = "";
-        var pathname = url.parse(request.url).pathname;
+        // const postData = "";
+        const pathname = url.parse(request.url).pathname;
         console.log("rec'd: " + pathname);
 
         // request.setEncoding('utf8');
