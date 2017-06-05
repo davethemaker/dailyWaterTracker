@@ -6,6 +6,6 @@ const handle = {}; // key:value pairs to handle routing
 handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;
-handle["/show"] = requestHandlers.show;
+handle["/showImage"] = requestHandlers.showImage;
 
 server(router.route, handle); // instantiate server, pass handle to where server machinery will be addressed

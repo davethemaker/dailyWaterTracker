@@ -28,7 +28,7 @@ function upload(response,request,database){
 
         database.collection('dailywatertracker').save({description: fields.description}, (err,result) => {
                     if(err) return console.log(err)
-                    console.log(result + " saved to db successfully");
+                    console.log(" form fields saved to db successfully");
                     // request.get('/');  // redirect non-funcitonal
         });
         
@@ -55,7 +55,7 @@ function upload(response,request,database){
     return;
 }
 
-function show(response) {
+function showImage(response) {
     console.log("request handler show was called");
     response.writeHead(200, {'Content-Type': "image/png"});
 
@@ -63,8 +63,7 @@ function show(response) {
 
     fs.readdir('./savedImages', (err, imageFiles) => {
         fs.createReadStream("./savedImages/" + imageFiles.length + ".png").pipe(response);
-})
-    ;
+    });
 }
 
 
@@ -74,4 +73,4 @@ function show(response) {
 
 exports.start = start;
 exports.upload = upload;
-exports.show = show;
+exports.showImage = showImage;
