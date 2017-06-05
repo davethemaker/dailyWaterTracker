@@ -25,27 +25,21 @@ function upload(response,request,database){
         console.log("parsing done");
         console.log(util.inspect({fields,fields, files:files}));
         // console.log("files" + files);
-        database.collection('dailywatertracker').save(files.upload.path, (err,result) => {
-                    if(err) return console.log(err)
-                    console.log(result + " saved to db successfully");
-                    res.redirect('/');
-        });
+
+        // database.collection('dailywatertracker').save(files.upload.path, (err,result) => {
+        //             if(err) return console.log(err)
+        //             console.log(result + " saved to db successfully");
+        //             res.redirect('/');
+        // });
         
 
-        // fs.readdir('./savedImages',(err,imageFiles) => {
+        fs.readdir('./savedImages',(err,imageFiles) => {
 
-        //     fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
-        //         if(err) console.log("error with renaming");
-        //         console.log("uploaded file name was renamed");
-        //     });
-
-        //     // good place to invoke db since we have renamed file on hand
-        //     // database.collection('dailywatertracker').save(,(err,result) => {
-        //     //         if(err) return console.log(err)
-        //     //         console.log(data + " saved to db successfully");
-        //     //         res.redirect('/');
-        //     // });
-        // });
+            fs.rename(files.upload.path,"savedImages/" + imageFiles.length +".png", function(err){
+                if(err) console.log("error with renaming");
+                console.log("uploaded file name was renamed");
+            });
+        });
 
 
 
@@ -57,8 +51,8 @@ function upload(response,request,database){
         // // response.write("<h3>show image here</h3>")
         // // response.end(util.inspect({fields:fields, files:files}));
         response.end('<h3><a href="/">back</a><h3>');
-    });
-   return;
+        });
+    return;
 }
 
 function show(response) {
@@ -72,13 +66,6 @@ function show(response) {
 })
     ;
 }
-
-
-    // fs.readFile('./showImages.html',function(err,data){
-    //     response.writeHead(200,{'Content-Type':'text/html'});
-    //     response.write(data);
-    //     response.end();
-    // });
 
 
 
