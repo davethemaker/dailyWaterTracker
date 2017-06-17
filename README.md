@@ -43,8 +43,6 @@ Lastly, open up your browser
 ````
 http://www.localhost:8080
 ````
-or, simply go [here](https://dailywatertracker.herokuapp.com/)
 
 
-
-Or, visit the live site: [daily water tracker](https://dailywatertracker.herokuapp.com/)
+Or, visit the **live site**: [daily water tracker](https://dailywatertracker.herokuapp.com/)
