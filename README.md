@@ -7,7 +7,7 @@ Description:
   * use of formidable to parse incoming form posted data
   * low-level eventListeners, routing, url parsing
   * mongoDb cloud-hosted persistence of field description values
-  * **img persistence is only for local instances of app**
+  * **img persistence is only for local instances of app, check out saveImagesLocally branch**
 
     The app uses dependency injection in numberous locations. A 'handle' object is creataed
     where desired pathnames are co-joined with requestHandlers - functions that will be invoked.

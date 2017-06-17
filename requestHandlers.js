@@ -74,22 +74,22 @@ function showDescriptions(response,request,database) {
   return;
 }
 
-function showImage(response) {
-    console.log("request handler show was called");
+// function showImage(response) {
+//     console.log("request handler show was called");
 
-    // fs.createReadStream("./savedImages/").pipe(response);
+//     // fs.createReadStream("./savedImages/").pipe(response);
 
-    fs.readdir('./savedImages', (err, imageFiles) => {
-        var image = fs.readFile("./savedImages/" + imageFiles.length + ".png",(err,data) => {
-            response.writeHead(200, {'Content-Type':'image/png'});
-            response.write(data);
-            response.end();
-        });
+//     fs.readdir('./savedImages', (err, imageFiles) => {
+//         var image = fs.readFile("./savedImages/" + imageFiles.length + ".png",(err,data) => {
+//             response.writeHead(200, {'Content-Type':'image/png'});
+//             response.write(data);
+//             response.end();
+//         });
 
 
-    });
-    return;
-}
+//     });
+//     return;
+// }
 
 
 
@@ -99,4 +99,4 @@ function showImage(response) {
 exports.start = start;
 exports.upload = upload;
 exports.showDescriptions = showDescriptions;
-exports.showImage = showImage;
+// exports.showImage = showImage;
