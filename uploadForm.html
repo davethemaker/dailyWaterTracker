@@ -32,19 +32,33 @@
       <div class="col-xs-4"></div>
     </div>
 
+     <div class="row">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4">
+         <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="description" placeholder="description">
+            <input type="file" name="upload" multiple="multiple">
+            <input type="submit" value="Upload" />
+         </form>
+      </div>
+      <div class="col-xs-4"></div>
+    </div>
      
-      <form action="/upload" method="post" enctype="multipart/form-data">
-          <input type="text" name="description" placeholder="description">
-          <input type="file" name="upload" multiple="multiple">
-          <input type="submit" value="Upload" />
-      </form>
+     
 
       <!-- <div id="picsLink"> -->
           <!-- <a href="/showImage">See last pic</a> -->
       <!-- </div> -->
-       <div id="descriptionsLink">
-          <a href="/showDescriptions">See descriptions</a>
+    <div class="row">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4">
+        <div id="descriptionsLink">
+           <a href="/showDescriptions">See descriptions</a>
+        </div>
       </div>
+      <div class="col-xs-4"></div>
+    </div>
+      
 
   </div>
 </body>
