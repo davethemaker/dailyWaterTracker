@@ -16,8 +16,23 @@
 </head>
 <body>
   <div class="container">
-      <h2>Track Your H2O</h2>
-      <p>It's important to drink half your body weight in water every day. Here you can keep track.. </p>
+    <div class="row">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4">
+        <h3>Track Your H2O</h3>
+      </div>
+      <div class="col-xs-4"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4">
+         <p class="lead">It's important to drink half your body weight in water every day. This will help you keep track</p>
+      </div>
+      <div class="col-xs-4"></div>
+    </div>
+
+     
       <form action="/upload" method="post" enctype="multipart/form-data">
           <input type="text" name="description" placeholder="description">
           <input type="file" name="upload" multiple="multiple">
