@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <style>body {background-color: lightblue}
+  <style>
+         body {
+            background-color: lightblue
+          }
+
          #picsLink {
-          position: absolute;
+                    position: absolute;
                     left: 50%;
-                    bottom: 90px;}
+                    bottom: 80px;}
          #descriptionsLink {
-          position: absolute;
-                    left: 50%;
-                    bottom: 120px;
+                    position: absolute;
+                    left: 40%;
+                    bottom: 40px;
+                    font-size: 1.3em;
          }
   </style>
 </head>
@@ -27,7 +32,7 @@
     <div class="row">
       <div class="col-xs-4"></div>
       <div class="col-xs-4">
-         <p class="lead">It's important to drink half your body weight in water every day. This will help you keep track</p>
+         <p class="lead">It's important to drink half your body weight in water every day - this will help you keep track</p>
       </div>
       <div class="col-xs-4"></div>
     </div>
@@ -35,29 +40,28 @@
      <div class="row">
       <div class="col-xs-4"></div>
       <div class="col-xs-4">
-         <form action="/upload" method="post" enctype="multipart/form-data">
-            <input type="text" name="description" placeholder="description">
-            <input type="file" name="upload" multiple="multiple">
-            <input type="submit" value="Upload" />
-         </form>
-      </div>
-      <div class="col-xs-4"></div>
-    </div>
-     
-     
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label>Description:</label>
+            <input type="text" name="description" placeholder="description" class="form-control">
+          </div>
 
-      <!-- <div id="picsLink"> -->
-          <!-- <a href="/showImage">See last pic</a> -->
-      <!-- </div> -->
-    <div class="row">
-      <div class="col-xs-4"></div>
-      <div class="col-xs-4">
-        <div id="descriptionsLink">
-           <a href="/showDescriptions">See descriptions</a>
-        </div>
+          <div class="form-group">
+            <label>Upload Image</label>
+            <input type="file" name="upload" multiple="multiple" class="text-success">
+          </div>
+
+          <button type="submit" value="Upload" class="btn btn-primary">Submit</button> 
+        </form>
       </div>
       <div class="col-xs-4"></div>
     </div>
+     
+   
+    <div id="descriptionsLink">
+       <a href="/showDescriptions">See descriptions</a>
+    </div>
+      
       
 
   </div>
