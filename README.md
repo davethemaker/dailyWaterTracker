@@ -46,3 +46,5 @@ http://www.localhost:8080
 
 
 Or, visit the **live site**: [daily water tracker](https://dailywatertracker.herokuapp.com/)
+
+![daily water tracker](./dailyWaterTracker.png?raw=true "daily water tracker")
