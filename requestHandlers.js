@@ -88,6 +88,7 @@ function showImage(response) {
 
 
     });
+    return;
 }
 
 
@@ -98,4 +99,4 @@ function showImage(response) {
 exports.start = start;
 exports.upload = upload;
 exports.showDescriptions = showDescriptions;
-// exports.showImage = showImage;
+exports.showImage = showImage;
