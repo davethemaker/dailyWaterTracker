@@ -74,16 +74,21 @@ function showDescriptions(response,request,database) {
   return;
 }
 
-// function showImage(response) {
-//     console.log("request handler show was called");
-//     response.writeHead(200, {'Content-Type': "image/png"});
+function showImage(response) {
+    console.log("request handler show was called");
 
-//     // fs.createReadStream("./savedImages/").pipe(response);
+    // fs.createReadStream("./savedImages/").pipe(response);
 
-//     fs.readdir('./savedImages', (err, imageFiles) => {
-//         fs.createReadStream("./savedImages/" + imageFiles.length + ".png").pipe(response);
-//     });
-// }
+    fs.readdir('./savedImages', (err, imageFiles) => {
+        var image = fs.readFile("./savedImages/" + imageFiles.length + ".png",(err,data) => {
+            response.writeHead(200, {'Content-Type':'image/png'});
+            response.write(data);
+            response.end();
+        });
+
+
+    });
+}
 
 
 
